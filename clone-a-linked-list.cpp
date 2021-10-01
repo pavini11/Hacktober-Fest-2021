@@ -3,8 +3,7 @@ using namespace std;
 
 struct Node {
     int data;
-    Node *next;
-    Node *arb;
+    Node *next, *arb;
 
     Node(int x) {
         data = x;
@@ -22,19 +21,18 @@ void print(Node *root) {
         else
             k = temp->arb->data;
         cout << temp->data << " " << k << " ";
-        temp = temp->next;
+        temp = temp -> next;
     }
 }
 
 Node *copyList(Node *head);
 
 void append(Node **head_ref, Node **tail_ref, int new_data) {
-
     Node *new_node = new Node(new_data);
     if (*head_ref == NULL) {
         *head_ref = new_node;
     } else
-        (*tail_ref)->next = new_node;
+        (*tail_ref) -> next = new_node;
     *tail_ref = new_node;
 }
 
